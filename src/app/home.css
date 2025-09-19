@@ -1,0 +1,281 @@
+.home-page {
+  background-color: var(--white);
+}
+
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  color: var(--black);
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: var(--white);
+}
+
+.hero-header {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+
+
+
+
+.col,
+.sub-col {
+  flex: 1;
+}
+
+.about-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--white);
+}
+
+.hero-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.about-img {
+  height: max-content;
+  padding: 8em 2em;
+}
+
+.about-img-container {
+  width: 20%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about,
+.philosophy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+.philosophy {
+  background-color: var(--black);
+  margin-bottom: 4rem;
+}
+
+.philosophy h1,
+.philosophy span {
+  color: var(--white);
+}
+
+.story {
+  /* min-height: 60dvh; */
+  display: flex;
+  gap: 1em;
+  margin-bottom: 8em;
+  /* align-items: center; */
+  padding: 1.5rem;
+  background-color: var(--white);
+}
+
+.story-copy p {
+  margin-bottom: 24px;
+}
+
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  overflow: hidden;
+  z-index: 10000000;
+  background-color: var(--black);
+  pointer-events: none;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0.45rem;
+  height: 100svh;
+  background-color: var(--foreground);
+  display: flex;
+  transform-origin: bottom;
+  transform: scaleY(0%);
+}
+
+.counter {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 2;
+}
+
+.count {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+}
+
+.digit {
+  flex: 1;
+  padding-top: 1rem;
+}
+
+.count .digit h1 {
+  color: var(--white);
+  font-size: 12vw;
+}
+
+.count .digit {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.count .digit h1 {
+  position: relative;
+  transform: translateY(120%);
+  will-change: transform;
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    background-color: var(--white);
+  }
+
+  .hero-header-col-lg,
+  .hero-footer-col-lg {
+    display: none;
+  }
+
+  .hero-header {
+    margin-bottom: 0;
+  }
+
+  .hero h3 {
+    font-size: clamp(2rem, 1.5rem + 2.5vw, 5rem);
+  }
+
+  section.story {
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 4em;
+    padding: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .story {
+  }
+
+  .about-img-container {
+    width: 80%;
+  }
+}
+
+/* Work Experience Section */
+.work-experience {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 1.5rem;
+  margin-bottom: 8rem;
+}
+
+.work-experience-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.work-experience-table .work-experience-row:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.work-experience-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 120px;
+  align-items: center;
+  padding: 2rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  gap: 2rem;
+}
+
+.work-experience-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black);
+  z-index: 1;
+  transform-origin: bottom;
+}
+
+.work-experience-position,
+.work-experience-company,
+.work-experience-duration {
+  position: relative;
+  z-index: 2;
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.work-experience-position h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+  color: var(--black);
+}
+
+.work-experience-company p {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: 0;
+  color: var(--black);
+}
+
+.work-experience-duration span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground-200);
+  text-align: right;
+  display: block;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .work-experience {
+    gap: 2rem;
+  }
+  .work-experience-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+  }
+
+  .work-experience-duration {
+    justify-self: start;
+  }
+
+  .work-experience-duration span {
+    text-align: left;
+  }
+}
