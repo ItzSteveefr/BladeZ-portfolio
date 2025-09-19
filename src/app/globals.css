@@ -1,11 +1,12 @@
 :root {
-    --background: #ffffff;
-    --black: #1a1a1a;
-    --white: #ffffff;
-    --muted: #8a8a8a, --background-200: #f5f5f5;
-    --foreground: #1a1a1a;
-    --foreground-200: #666666;
-    --btn-icon: #ffc22a;
+    --background: #121212;
+    --black: #f1f1f1;
+    --white: #121212;
+    --muted: #888888;
+    --background-200: #1c1c1c;
+    --foreground: #f1f1f1;
+    --foreground-200: #a0a0a0;
+    --btn-icon: #daa520;
 }
 
 * {
