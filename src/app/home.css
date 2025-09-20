@@ -72,7 +72,23 @@
 }
 
 .line.line5 {
-  color: var(--black);
+    color: var(--black);
+}
+
+.line.line1 {
+    color: var(--black);
+}
+
+.line.line2 {
+    color: var(--black);
+}
+
+.line.line3 {
+    color: var(--black);
+}
+
+.line.line4 {
+    color: var(--black);
 }
 
 .philosophy h1,
