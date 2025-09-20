@@ -11,7 +11,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CustomEase from "gsap/CustomEase";
 import Footer from "@/components/Footer/Footer";
-import TrailContainer from "@/components/TrailContainer";
 // import InteractiveGradient from "@/components/InteractiveGradient";
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
@@ -299,7 +298,6 @@ export default function Home() {
             </h1>
           </Copy>
         </div>
-        <TrailContainer />
       </section>
 
       <section className="about-img" ref={aboutImgRef}>
