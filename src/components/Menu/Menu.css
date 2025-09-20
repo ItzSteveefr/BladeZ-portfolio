@@ -61,13 +61,14 @@
 
 .nav-menu-time {
     flex: 1;
+    margin-top: 9px;
 }
 
 .nav-links {
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
 }
 
@@ -75,12 +76,22 @@
     cursor: pointer;
 }
 
-.nav-links a,
+.nav-links a {
+    transition: all 0.2s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    color: var(--white);
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
 .nav-logo a {
     transition: opacity 0.2s ease;
 }
 
-.nav-links a:hover,
 .nav-logo a:hover {
     opacity: 0.7;
 }

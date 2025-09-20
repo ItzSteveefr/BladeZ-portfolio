@@ -1,6 +1,7 @@
 "use client";
 import "./home.css";
 import { useState, useEffect, useRef } from "react";
+import Matter from "matter-js";
 
 // import DynamicBackground from "@/components/DynamicBackground/DynamicBackground";
 import Copy from "@/components/Copy/Copy";
@@ -235,6 +236,13 @@ export default function Home() {
         });
       });
     }
+    // Add this new code here, at the end of the useGSAP callback
+    // Initialize skills physics
+    if (typeof window !== "undefined") {
+      import("@/components/skillphysics").then(({ initSkillsPhysics }) => {
+        initSkillsPhysics();
+      });
+    }
   }, [showPreloader]);
 
   return (
@@ -302,7 +310,7 @@ export default function Home() {
 
       <section className="about-img" ref={aboutImgRef}>
         <div className="about-img-container">
-          <img src="/trail-images/img1.jpg" alt="Ahmed Saleem" />
+          <img src="/about.jpg" alt="Ahmed Saleem" />
         </div>
       </section>
 
@@ -374,6 +382,62 @@ export default function Home() {
               design, they're students of humanity.
             </h1>
           </Copy>
+        </div>
+      </section>
+
+      <section className="about-skills">
+        <div className="container">
+          <div className="about-skills-col">
+            <div className="symbols-container"></div>
+            <div className="about-skills-copy-wrapper">
+              <div className="about-skills-callout">
+                <Copy delay={0.2}>
+                  <p className="mono">
+                    <span>▶</span> Proving gravity applies to divs too
+                  </p>
+                </Copy>
+              </div>
+              <div className="about-skills-header">
+                <Copy delay={0.4}>
+                  <h3>Things I know that make the web cooler</h3>
+                </Copy>
+              </div>
+            </div>
+          </div>
+          <div className="about-skills-col skills-playground">
+            <div className="object-container">
+              <div className="object os-1">
+                <p className="mono">HTML</p>
+              </div>
+              <div className="object os-2">
+                <p className="mono">CSS</p>
+              </div>
+              <div className="object os-3">
+                <p className="mono">JavaScript</p>
+              </div>
+              <div className="object os-1">
+                <p className="mono">GSAP</p>
+              </div>
+              <div className="object os-2">
+                <p className="mono">Discord.js</p>
+              </div>
+              <div className="object os-3">
+                <p className="mono">Lenis</p>
+              </div>
+              <div className="object os-1">
+                <p className="mono">React</p>
+              </div>
+              <div className="object os-2">
+                <p className="mono">Next.js</p>
+              </div>
+              <div className="object os-3">
+                <p className="mono">WebGL</p>
+              </div>
+              <div className="object os-1">
+                <p className="mono">Three.js</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
